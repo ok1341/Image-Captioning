@@ -18,17 +18,12 @@ import streamlit as st
 
 features = pickle.load(open('./images1.pkl', 'rb'))
 
-words_to_index = 'wget -O https://github.com/ok1341/Image-Captioning-files/blob/eee94e6288157c94532f50208ca89af5be6cf31c/words.pkl'
-index_to_words = 'wget -O https://github.com/ok1341/Image-Captioning-files/blob/eee94e6288157c94532f50208ca89af5be6cf31c/words1.pkl'
+words_to_index = pickle.load(open('words.pkl', 'rb'))
+index_to_words = pickle.load(open('words1.pkl', 'rb'))
 
-model = 'wget -O https://github.com/ok1341/Image-Captioning-files/blob/eee94e6288157c94532f50208ca89af5be6cf31c/model_14.h5'
+model = load_model('model_14.h5')
 
-
-#features = pickle.load(requests.get("https://drive.google.com/file/d/1F8FGdOdCOYiNRcFxZdhKzaXcJSFUOaW1/view?usp=sharing", stream=True))
-#words_to_index = cp.load(urlopen("https://github.com/ok1341/Image-Captioning-files/blob/eee94e6288157c94532f50208ca89af5be6cf31c/words.pkl"))
-
-st.cache
-images = "wget -O https://github.com/ok1341/Image-Captioning-files/blob/eee94e6288157c94532f50208ca89af5be6cf31c/Images/"
+images = "/Images"
 
 max_length = 33
 
@@ -62,7 +57,7 @@ def show():
     z = random.randint(0,20)
     pic = list(features.keys())[z]
     image = features[pic].reshape((1,2048))
-    x = plt.imread(images + pic)
+    x = plt.imread(images[z] + pic)
     st.image(x)
     st.write("Generated caption:", image_captioning(image))
     st.write("Original caption:", org_caption(z + 1))
