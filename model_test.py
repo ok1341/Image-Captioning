@@ -53,7 +53,7 @@ def org_caption(id):
 
 #show picture an caption
 def show():
-    z = random.randint(0,20)
+    z = random.randint(0,500)
     pic = list(features.keys())[z]
     image = features[pic].reshape((1,2048))
     x = plt.imread(images + pic)
