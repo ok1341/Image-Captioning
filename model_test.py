@@ -8,9 +8,6 @@ import pickle
 import random
 from urllib.request import urlopen
 import requests
-from io import BytesIO
-import pandas as pd
-import cloudpickle as cp
 import streamlit as st
 
 
@@ -23,7 +20,8 @@ index_to_words = pickle.load(open('words1.pkl', 'rb'))
 
 model = load_model('model_14.h5')
 
-images = "/Images"
+images = "Images/"
+
 
 max_length = 33
 
@@ -49,6 +47,7 @@ def org_caption(id):
     with open("captions.txt", 'r') as f:
         caps = [line.rstrip() for line in f]
         original = caps[id]
+        print(original)
     return original
 
 
@@ -57,10 +56,9 @@ def show():
     z = random.randint(0,20)
     pic = list(features.keys())[z]
     image = features[pic].reshape((1,2048))
-    x = plt.imread(images[z] + pic)
+    x = plt.imread(images + pic)
     st.image(x)
     st.write("Generated caption:", image_captioning(image))
-    st.write("Original caption:", org_caption(z + 1))
     
 if st.button("Generate caption"):
     show()
