@@ -11,9 +11,6 @@ import streamlit as st
 import pandas as pd
 from model_test import show, image_captioning, org_caption
 
-
-
-
 # Headline
 st.write("# ML4B - Image Caption Generator")
 
@@ -61,20 +58,17 @@ with st.expander("5. Data Splitting"):
     random.""")
 st.write("")
 
-
 # Load data
 @st.cache
 def load_data():
     dataframe = pd.read_csv("")
     return dataframe
 
-
 data_load_state = st.header("Loading data...")
 
 #df = load_data()
 
 data_load_state.header("Generated caption vs. real caption:")
-
 
 # Get image
 def get_image():
@@ -86,18 +80,14 @@ def get_image():
     st.write("URL:")
     st.write(url)
 
-
-#center the button
-
+# Center the button
 col1, col2, col3 = st.columns([1,1,1])
-#Generate caption to corresponding image
+
+
+# Generate caption to corresponding image
 with col1:
     pass
 with col2:
-    if st.button("Generate caption:"):
+    if st.button("Generate caption"):
         show()
-
-
-
-
-
+        
