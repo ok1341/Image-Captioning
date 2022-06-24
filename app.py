@@ -24,7 +24,7 @@ generated caption better reflects the image content. All results are displayed b
 evaluation.""")
 st.write("")
 
-# Data preparation
+# Data preparation process
 st.header("Our data preparation process")
 
 with st.expander("1. Data Understanding"):
@@ -82,7 +82,6 @@ def get_image():
 
 # Center the button
 col1, col2, col3 = st.columns([1,1,1])
-
 
 # Generate caption to corresponding image
 with col1:
