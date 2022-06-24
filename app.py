@@ -25,7 +25,7 @@ evaluation.""")
 st.write("")
 
 # Data preparation process
-st.header("Our data preparation process")
+st.header("Our data preparation process - To be updated")
 
 with st.expander("1. Data Understanding"):
     st.write("""For our project we are using the LAION data set, which is available to us as a CSV file. It is currently 
