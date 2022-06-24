@@ -18,12 +18,12 @@ features = pickle.load(open('./images1.pkl', 'rb'))
 words_to_index = pickle.load(open('words.pkl', 'rb'))
 index_to_words = pickle.load(open('words1.pkl', 'rb'))
 
-model = load_model('model_14.h5')
+model = load_model('model_19.h5')
 
 images = "Images/"
 
 
-max_length = 33
+max_length = 43
 
 
 #generate captions
@@ -44,10 +44,13 @@ def image_captioning(picture):
     return final
 
 def org_caption(id):
-    with open("captions.txt", 'r') as f:
+    original = 0
+    with open("captions.txt", 'r', encoding='utf-8') as f:
         caps = [line.rstrip() for line in f]
-        original = caps[id]
-        print(original)
+        for i in caps:
+            if id == i:
+                print(i)
+
     return original
 
 
@@ -59,6 +62,7 @@ def show():
     x = plt.imread(images + pic)
     st.image(x)
     st.write("Generated caption:", image_captioning(image))
+    st.write("Original caption:, ", org_caption(pic))
     
 if st.button("Generate caption"):
     show()

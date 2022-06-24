@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import pickle
 import streamlit as st
 import pandas as pd
-from model_test import show, image_captioning
+from model_test import show, image_captioning, org_caption
 
 
 
@@ -86,11 +86,16 @@ def get_image():
     st.write(url)
 
 
+#center the button
+
+col1, col2, col3 = st.columns([1,1,1])
 #Generate caption to corresponding image
+with col1:
+    pass
+with col2:
+    if st.button("Generate caption:"):
+        show()
 
-
-if st.button("Generate Caption"):
-    show()
 
 
 
