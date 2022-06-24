@@ -10,9 +10,7 @@ from urllib.request import urlopen
 import requests
 import streamlit as st
 
-
-#load data
-
+# Load data
 features = pickle.load(open('./images1.pkl', 'rb'))
 
 words_to_index = pickle.load(open('words.pkl', 'rb'))
@@ -20,13 +18,11 @@ index_to_words = pickle.load(open('words1.pkl', 'rb'))
 
 model = load_model('model_19.h5')
 
+# General
 images = "Images/"
-
-
 max_length = 43
 
-
-#generate captions
+# Generate captions
 def image_captioning(picture):
     in_text = 'startseq'
     for i in range(max_length):
@@ -43,6 +39,7 @@ def image_captioning(picture):
     final = ' '.join(final)
     return final
 
+# Get original caption
 def org_caption(id):
     original = 0
     with open("captions.txt", 'r', encoding='utf-8') as f:
@@ -53,8 +50,7 @@ def org_caption(id):
 
     return original
 
-
-#show picture an caption
+# Show picture and caption
 def show():
     z = random.randint(0,500)
     pic = list(features.keys())[z]
