@@ -1,4 +1,5 @@
 import streamlit as st
+import random
 from model import predict_step
 
 # Headline
