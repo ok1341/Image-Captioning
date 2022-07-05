@@ -90,5 +90,5 @@ else:
             z = random.randint(0,500)
             picture = list(features.keys())[z]
             picture = features[picture].reshape((1,2048))
-            picture = plt.imread(images + pic)
+            picture = plt.imread(images + picture)
             gen_caption(picture)
