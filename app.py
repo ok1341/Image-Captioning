@@ -84,6 +84,6 @@ else:
         if st.button("Get a picture from our dataset:"):
             picture = '1200px-Almeida_Júnior_-_Saudade_(Longing)_-_Google_Art_Project.jpg'
             x = random.randint(0,500)
-            picture = list(features.keys())[x]
+            pic = list(features.keys())[x]
             picture = features[pic]
             gen_caption(picture)
