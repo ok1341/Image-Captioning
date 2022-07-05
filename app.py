@@ -2,6 +2,7 @@ import streamlit as st
 import random
 import pickle 
 import matplotlib.pyplot as plt
+import numpy as np
 from model import predict_step
 
 #preloading the images folder
@@ -89,7 +90,7 @@ else:
         # get a random picture from out dataset
         if st.button("Get a picture from our dataset:"):
             z = random.randint(0,500)
-            picture = list(features.keys())[z]
-            picture = features[picture].reshape((1,2048))
-            picture = plt.imread(images + picture)
+            pic = list(features.keys())[z]
+            image = features[pic].reshape((1,2048))
+            picture = plt.imread(images + pic)
             gen_caption(picture)
