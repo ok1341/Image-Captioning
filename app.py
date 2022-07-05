@@ -1,5 +1,6 @@
 import streamlit as st
 import random
+import pickle 
 from model import predict_step
 
 #preloading the images folder
