@@ -93,4 +93,6 @@ else:
             pic = list(features.keys())[z]
             image = features[pic].reshape((1,2048))
             picture = plt.imread(images + pic)
+            print(picture)
+            st.write(picture)
             gen_caption(picture)
