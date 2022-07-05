@@ -2,6 +2,10 @@ import streamlit as st
 import random
 from model import predict_step
 
+#preloading the images folder
+features = pickle.load(open('./images1.pkl', 'rb'))
+images = "Images/"
+
 # Headline
 st.write("# ML4B - Image Caption Generator")
 
