@@ -87,8 +87,10 @@ else:
     with col2:
         # get a random picture from out dataset
         if st.button("Get a picture from our dataset:"):
-            picture = '1200px-Almeida_Júnior_-_Saudade_(Longing)_-_Google_Art_Project.jpg'
             x = random.randint(0,500)
             pic = list(features.keys())[x]
             picture = features[pic]
+            st.write(type(picture))
+            st.write(picture)
+                     
             gen_caption(picture)
