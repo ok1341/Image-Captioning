@@ -1,8 +1,6 @@
 import streamlit as st
 import random
 import pickle 
-import matplotlib.pyplot as plt
-import numpy as np
 from model import predict_step
 
 #preloading the images folder
