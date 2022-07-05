@@ -91,8 +91,9 @@ else:
         if st.button("Get a picture from our dataset:"):
             z = random.randint(0,500)
             pic = list(features.keys())[z]
+            st.write(pic)
             image = features[pic].reshape((1,2048))
+            st.write(images + pic)
             picture = plt.imread(images + pic)
-            print(picture)
             st.write(picture)
             gen_caption(picture)
