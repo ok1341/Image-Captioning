@@ -4,3 +4,4 @@ Pillow~=9.2.0
 streamlit~=1.10.0
 cloudpickle==2.1.0
 matplotlib==3.5.2
+numpy==1.22.4
