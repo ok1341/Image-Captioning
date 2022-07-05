@@ -1,15 +1,5 @@
-from pyexpat import model
-import random
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-import numpy as np
-import matplotlib.pyplot as plt
-import pickle
 import streamlit as st
-import pandas as pd
-from model_test import show, image_captioning, org_caption
+from model import predict_step
 
 # Headline
 st.write("# ML4B - Image Caption Generator")
@@ -17,15 +7,14 @@ st.write("# ML4B - Image Caption Generator")
 # Project explanation
 st.header("Short project explanation")
 st.write("""Hello, we are Jonas, Moritz and Ole. Together we have set ourselves the goal of building, explaining and 
-presenting an image caption generator using Deep Learning and its Neural Networks. We use this subtype of machine 
-learning as it is the closest to the way humans analyze images. The user has the option to upload any image to which
-our model will generate a caption as accurate as possible. After that, the user can vote whether the original or 
-generated caption better reflects the image content. All results are displayed by means of a chart for further 
-evaluation.""")
+presenting an image caption generator using Deep Learning and its Neural Networks. We use these subtype of machine 
+learning, as it is the closest to the way humans analyze images. Based on this, we want to compare our own generated 
+caption with the actual caption of the image. The tip of the iceberg would be if we manage to algorithmically 
+evaluate the appropriateness of our caption.""")
 st.write("")
 
-# Data preparation process
-st.header("Our data preparation process - To be updated")
+# Data preparation
+st.header("Our data preparation process")
 
 with st.expander("1. Data Understanding"):
     st.write("""For our project we are using the LAION data set, which is available to us as a CSV file. It is currently 
@@ -58,35 +47,42 @@ with st.expander("5. Data Splitting"):
     random.""")
 st.write("")
 
-# Load data
-@st.cache
-def load_data():
-    dataframe = pd.read_csv("")
-    return dataframe
 
-data_load_state = st.header("Loading data...")
+# show the picture and generate the caption
+def gen_caption(picture):
+    st.image(picture)
+    st.subheader('Generated caption:')
+    with st.spinner(text='This may take a moment...'):
+        caption = predict_step([picture])
+    st.write(caption[0])
 
-#df = load_data()
 
-data_load_state.header("Generated caption vs. real caption:")
-
-# Get image
-def get_image():
-    column = random.randint(0, len(df) - 1)
-    url = df.iloc[column]["url"]
-    st.image(url)
-    st.write("Real caption: ")
-    st.write(df.iloc[column]["caption"])
-    st.write("URL:")
-    st.write(url)
-
-# Center the button
-col1, col2, col3 = st.columns([1,1,1])
-
-# Generate caption to corresponding image
+# user chooses between preuploaded picture or uploads one himself
+col1, col2, col3 = st.columns([0.1, 1, 0.1])
 with col1:
     pass
 with col2:
-    if st.button("Generate caption"):
-        show()
-        
+    st.subheader('Caption Generator')
+    user_choice = st.radio(label='Choose from either option',
+                           options=['Upload your own picture', 'Image from our dataset'])
+    st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+
+if user_choice == 'Upload your own picture':
+    picture = st.file_uploader('', type=['jpg'])
+    if picture != None:
+        with col1:
+            pass
+        with col2:
+            gen_caption(picture)
+else:
+    # center the button
+    with col1:
+        pass
+    with col2:
+        # get a random picture from out dataset
+        if st.button("Get a picture from our dataset:"):
+            picture = '1200px-Almeida_Júnior_-_Saudade_(Longing)_-_Google_Art_Project.jpg'
+            x = random.randint(0,500)
+            picture = list(features.keys())[x]
+            picture = features[pic]
+            gen_caption(picture)
