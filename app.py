@@ -98,5 +98,5 @@ else:
             pic = picture_list[r]
             picture = images + pic
             gen_caption(picture)
-   with col3: 
+    with col3: 
         pass
