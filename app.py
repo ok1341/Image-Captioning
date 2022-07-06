@@ -3,7 +3,7 @@ import random
 import pickle 
 from model import predict_step
 
-#preloading the images folder
+# Preloading the images folder
 features = pickle.load(open('./images1.pkl', 'rb'))
 images = "Images/"
 
