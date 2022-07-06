@@ -87,7 +87,8 @@ else:
     with col2:
         # get a random picture from out dataset
         if st.button("Get a picture from our dataset:"):
-            z = random.randint(0,500)
-            pic = list(features.keys())[z]
+            picture_list = list(features.keys())
+            r = random.randint(0,len(picture_list) - 1)
+            pic = picture_list[r]
             picture = images + pic
             gen_caption(picture)
