@@ -64,7 +64,7 @@ def gen_caption(picture):
 
 
 # user chooses between preuploaded picture or uploads one himself
-col1, col2, col3 = st.columns([0.1, 1, 0.1])
+col1, col2, col3 = st.columns([0.5, 1, 0.5])
 with col1:
     pass
 with col2:
