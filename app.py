@@ -53,7 +53,6 @@ with st.expander("5. Data Splitting"):
     random.""")
 st.write("")
 
-
 # Show picture and generate caption
 def gen_caption(picture):
     st.image(picture)
@@ -61,7 +60,6 @@ def gen_caption(picture):
     with st.spinner(text='This may take a moment...'):
         caption = predict_step([picture])
     st.write(caption[0])
-
 
 # User chooses between preuploaded picture or uploads one himself
 col1, col2, col3 = st.columns([0.5, 1, 0.5])
@@ -74,7 +72,6 @@ with col2:
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
 with col3:
     pass
-
 
 if user_choice == 'Upload your own picture':
     picture = st.file_uploader('', type=['jpg'])
