@@ -54,7 +54,7 @@ with st.expander("5. Data Splitting"):
 st.write("")
 
 
-# show the picture and generate the caption
+# Show picture and generate caption
 def gen_caption(picture):
     st.image(picture)
     st.subheader('Generated caption:')
@@ -63,7 +63,7 @@ def gen_caption(picture):
     st.write(caption[0])
 
 
-# user chooses between preuploaded picture or uploads one himself
+# User chooses between preuploaded picture or uploads one himself
 col1, col2, col3 = st.columns([0.5, 1, 0.5])
 with col1:
     pass
@@ -87,11 +87,11 @@ if user_choice == 'Upload your own picture':
             pass
         
 else:
-    # center the button
+    # Center the button
     with col1:
         pass
     with col2:
-        # get a random picture from out dataset
+        # Get a random picture from out dataset
         if st.button("Get a picture from our dataset:"):
             picture_list = list(features.keys())
             r = random.randint(0,len(picture_list) - 1)
