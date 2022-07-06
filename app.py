@@ -72,6 +72,9 @@ with col2:
     user_choice = st.radio(label='Choose from either option',
                            options=['Upload your own picture', 'Image from our dataset'])
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
+with col3:
+    pass
+
 
 if user_choice == 'Upload your own picture':
     picture = st.file_uploader('', type=['jpg'])
@@ -80,6 +83,9 @@ if user_choice == 'Upload your own picture':
             pass
         with col2:
             gen_caption(picture)
+        with col3:
+            pass
+        
 else:
     # center the button
     with col1:
@@ -92,3 +98,5 @@ else:
             pic = picture_list[r]
             picture = images + pic
             gen_caption(picture)
+   with col3: 
+        pass
