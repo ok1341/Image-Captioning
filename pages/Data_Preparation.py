@@ -10,7 +10,6 @@ with st.expander("Information in advance"):
 with st.expander("Data Understanding"):
     st.write("""To train, validate and test the model, we were first provided with the LAION dataset, which is available to us as a CSV file. With 240 TB, 
              this is currently the largest freely accessible image-text dataset in the world. Due to the often inaccurate captions and vague image content,
-<<<<<<< HEAD
              we searched for other, more suitable datasets to form the basis of our project. After research, we decided on the Flickr dataset, which stores 
              images and captions separately. The dataset contains high-quality images with varying content, but all can be meaningfully classified.""")
 
@@ -26,10 +25,6 @@ with st.expander("Data Understanding"):
 
     with col3:
         st.image("Images/3715559023_70c41b31c7.jpg", use_column_width='auto')
-=======
-             we searched for other, more suitable datasets to form the basis of our project. After research, we decided to use the Flickr dataset, which stores 
-             Images and captions stored separately. The dataset contains high-quality images with varying content, but all can be meaningfully classified.""")
->>>>>>> 3d34ee9896cefe90348d44d5941009a10e48b405
 
 with st.expander("Data Selection"):
     st.write("""As explained in the previous step, we used the Fickr 8k dataset. This consists of 8,000 images, which is the total amount we used for training, 
