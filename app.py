@@ -21,11 +21,12 @@ st.write("# ML4B - Image Caption Generator")
 
 # Project explanation
 st.header("Short project explanation")
-st.write("""Hello, we are Jonas, Moritz and Ole. Together we have set ourselves the goal of building, explaining and 
-presenting an image caption generator using Deep Learning and its Neural Networks. We use these subtype of machine 
-learning, as it is the closest to the way humans analyze images. Based on this, we want to compare our own generated 
-caption with the actual caption of the image. The tip of the iceberg would be if we manage to algorithmically 
-evaluate the appropriateness of our caption.""")
+st.write("""Hello, we are Jonas, Moritz and Ole. Together we want to understand, build and present a caption generator 
+using neural networks. We use this subtype of machine learning because it is closest to the way humans analyze images. 
+How does the application work? The user has the option to either upload an image or select one from the dataset. Our 
+model then tries to create a label that is as accurate as possible. To evaluate, the user can vote via a button which 
+of the two captions they think better represents the image content. The results are displayed in a graph for viewing 
+and further analysis.""")
 st.write("")
 
 # Data preparation
