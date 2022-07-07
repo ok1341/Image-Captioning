@@ -3,8 +3,14 @@ import random
 import pickle 
 from model import predict_step
 
-# Preloading the images folder
+# Configure page 
+st.set_page_config(
+    page_title = "Image Captioning",
+    page_icon = "🖼️"
+)
 
+
+# Preloading the images folder
 @st.cache
 def load_feature_file():
     loaded_features = pickle.load(open('./images1.pkl', 'rb'))
