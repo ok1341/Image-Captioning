@@ -1,7 +1,7 @@
 import streamlit as st
 
 st.markdown("<h1 style='text-align: center'>Our Business Understanding Process</h1>", unsafe_allow_html=True)
-st.markdown("""<p style='text-align: center'; border-style=solid>While many teams hurry through this phase, establishing a strong business understanding
+st.markdown("""<p style='text-align: center'>While many teams hurry through this phase, establishing a strong business understanding
          is like building the foundation of a house – absolutely essential.</p>""", unsafe_allow_html=True)
 
 
