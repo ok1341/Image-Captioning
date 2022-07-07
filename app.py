@@ -2,8 +2,6 @@ import streamlit as st
 import random
 import pickle 
 from model import predict_step
-from streamlit_option_menu import option_menu
-
 # Configure page 
 st.set_page_config(
     page_title = "Image Captioning",
