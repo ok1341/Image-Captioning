@@ -29,7 +29,7 @@ with st.expander("Determine Data Mining Goals"):
              and thus to have a model that can roughly and comprehensibly recognize the image content. Based on this, we definitely
              we definitely wanted to include the user as well as some features.""")
 
-with st.expander("Product Projekt Plan"):
+with st.expander("Produce Project Plan"):
     st.write("""We designed our project plan to be relatively flexible. We had set ourselves specific deadlines early on, divided the tasks among ourselves accordingly,
              and consulted each other at least weekly on how to proceed with the current development. Roughly speaking, it was a matter of first doing research,
              preparing the data, training a model, and finally evaluating it. Of course, there were always problems along the way, which we solved together.""")
