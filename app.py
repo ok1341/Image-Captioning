@@ -4,7 +4,12 @@ import pickle
 from model import predict_step
 
 # Preloading the images folder
-features = pickle.load(open('./images1.pkl', 'rb'))
+
+@st.cache
+def load_feature_file():
+    loaded_features = pickle.load(open('./images1.pkl', 'rb'))
+    return loaded_features
+features = load_feature_file()
 images = "Images/"
 
 # Headline
