@@ -42,7 +42,7 @@ col1, col2, col3 = st.columns([0.5, 1, 0.5])
 with col1:
     pass
 with col2:
-    st.subheader('Caption Generator')
+    st.header('Caption Generator')
     user_choice = st.radio(label='Choose from either option',
                            options=['Upload your own picture', 'Image from our dataset'])
     st.write('<style>div.row-widget.stRadio > div{flex-direction:row;}</style>', unsafe_allow_html=True)
