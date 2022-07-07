@@ -21,7 +21,7 @@ with st.expander("Data Selection"):
 with st.expander("Data Cleaning"):
     st.write("""Since the Flickr dataset is already designed for our use case, including the image caption, we had to do very little preparation of the data.
              For each image, there are 5 different exact captions that we loaded into the dictionary, using the image as the key and the caption as the value.
-             In addition, the captions were written in lowercase letters. In the LAION dataset I had tried before, the situation was different. 
+             In addition, the captions were written in lowercase letters. In the LAION dataset we had tried before, the situation was different. 
              There we cleaned up the captions for English, NSFW, a maximum length for the captions, and matching keywords.""")
 
 with st.expander("Feature Engineering"):
