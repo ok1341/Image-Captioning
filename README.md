@@ -3,4 +3,5 @@
 Visit our application: https://ok1341-image-captioning-app-vx288v.streamlitapp.com
 
 # Our machine learning project
-Hello, we are Jonas, Moritz and Ole. Together we have set ourselves the goal of building, explaining and presenting an image caption generator using Deep Learning and its Neural Networks. We use this subtype of machine learning as it is the closest to the way humans analyze images. The user has the option to upload any image to which our model will generate a caption as accurate as possible. After that, the user can vote whether the original or generated caption better reflects the image content. All results are displayed by means of a chart for further evaluation.
+Hello, we are Jonas, Moritz and Ole. Together we want to understand, build and present a caption generator using neural networks. We use this subtype of machine learning because it is closest to the way humans analyze images.
+How does the application work? The user has the option to either upload an image or select one from the dataset. Our model then tries to create a label that is as accurate as possible. To evaluate, the user can vote via a button which of the two captions they think better represents the image content. The results are displayed in a graph for viewing and further analysis.
