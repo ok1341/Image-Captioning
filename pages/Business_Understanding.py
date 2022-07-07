@@ -7,9 +7,9 @@ st.markdown("""<p style='text-align: center'>While many teams hurry through this
 
 with st.expander("Motivation"):
     st.write("""What was our motivation? We are excited about machine learning in the context of visual challenges, for example, autonomous driving, which can 
-    provide more safety on the road. For this reason, we were eager to develop an application in the field of labeling. Through the project, we hoped to be able 
-    to practically apply our theoretical foundations and expand our knowledge in the field of screen recognition. and to expand our knowledge in the field of image 
-    recognition and labeling.""")
+             provide more safety on the road. For this reason, we were eager to develop an application in the field of labeling. Through the project, we hoped to be 
+             able to practically apply our theoretical foundations and expand our knowledge in the field of screen recognition. and to expand our knowledge in the 
+             field of image recognition and labeling.""")
 
 with st.expander("Determining Business Objectives"):
     st.write("""At the beginning, we had many ideas that usually had to be changed during the project due to factors such as time, feasibility and difficulty,
